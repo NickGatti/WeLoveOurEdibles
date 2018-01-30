@@ -14,7 +14,7 @@ module.exports = {
         if ( !req.session.error ) {
             req.session.error = "";
         }
-        res.render( "index", { error: req.session.error } );
+        res.render( "login", { error: req.session.error } );
     },
     register: function ( req, res ) {
         knex( 'users' ).insert( {
@@ -23,7 +23,7 @@ module.exports = {
             age: req.body.age,
             password: req.body.password
         } ).then( () => {
-            res.redirect( '/' );
+            res.redirect( '/home' );
         } )
     },
     login: function ( req, res ) {
@@ -34,7 +34,7 @@ module.exports = {
                 if ( !user ) {
                     req.session.error = "Invalid email/password"
                     req.session.save( () => {
-                        res.redirect( '/' );
+                        res.redirect( '/home' );
                         return;
                     } )
                 }
@@ -43,12 +43,12 @@ module.exports = {
                     req.session.user = user;
                     req.session.save( () => {
                         // redirect somewhere
-                        res.redirect( '/protectedpage' );
+                        res.redirect( '/home' );
                     } )
                 } else {
                     req.session.error = "Invalid email/password"
                     req.session.save( () => {
-                        res.redirect( '/' );
+                        res.redirect( '/home' );
                     } )
                 }
 
@@ -56,6 +56,6 @@ module.exports = {
     },
 
     protectedpage: function ( req, res ) {
-        res.render( 'protectedpage', { user: req.session.user } )
+        res.render( 'mmj', { user: req.session.user } )
     }
 }
