@@ -17,7 +17,7 @@ I get rendered “contact”
 
 As a MMJ false user when I go to route “/reviews”
 I get a nav-search page with any true results omitted,
-I get rendered “reviews”
+I get rendered “mmj-false-reviews”
 
 As a MMJ false user when I go to route “/login”
 I get rendered “login”
@@ -40,7 +40,7 @@ I get rendered “contact”
 
 As a MMJ true user when I go to route “/reviews”
 I get a nav-search page with any true results not omitted,
-I get rendered “reviews”
+I get rendered “mmj-true-reviews”
 
 As a MMJ true user when I go to route “/login”
 I get rendered “login”
