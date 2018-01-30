@@ -2,7 +2,7 @@ const knex = require( "../db/knex.js" );
 
 module.exports = {
 
-    controlPanel: function ( req, res, next ) {
+    view: function ( req, res, next ) {
 
     }
 
