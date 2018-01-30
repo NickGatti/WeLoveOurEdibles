@@ -5,7 +5,7 @@ exports.up = function ( knex, Promise ) {
         table.integer( 'taste' ).notNullable()
         table.integer( 'smell' ).notNullable()
         table.integer( 'effect' ).notNullable()
-        table.integer( 'reccomend' ).notNullable()
+        table.integer( 'recommend' ).notNullable()
         table.string( 'from' )
         table.string( 'share' )
         table.timestamps( true, true )
