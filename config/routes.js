@@ -5,6 +5,7 @@ module.exports = function ( app ) {
     app.get( '/', users.index );
     app.post( '/register', users.register );
     app.post( '/login', users.login );
+
     app.use( authMiddleware );
     app.get( '/protectedpage', users.protectedpage );
 }
