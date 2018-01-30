@@ -9,6 +9,9 @@ Nav bar - About, contact, reviews, login/registration
 As a MMJ false user I go to route “/“
 I get redirected ‘/home” page
 
+As a MMJ false user I go to route '/home'
+I get rendered 'home'
+
 As a MMJ false user when I go to route “/about”
 I get rendered “about”
 
