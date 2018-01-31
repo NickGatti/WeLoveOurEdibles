@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Login and Registation</title>
+  <title>Login and Registration</title>
 
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -16,54 +16,49 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
-<nav>
-  <div class="nav-wrapper blue darken-4">
-    <a href="/" class="brand-logo">Logo</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="/about">About</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li><a href="/login">Login/Registration</a></li>
-    </ul>
-  </div>
-</nav>
 
-<main>
+<body>
 
-  <body>
+  <nav>
+    <div class="nav-wrapper blue darken-4">
+      <a href="/" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/login">Login/Registration</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
 
     <div class="container">
 
       <div class="row">
-    <h3>Login and Registration</h3>
+        <h4>Login and Registration</h4>
 
-      <h5>Register:</h5>
-      <form action="/user/register" method="post">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit">
-      </form>
+        <h5>Register:</h5>
+        <form action="/user/register" method="post">
+          <input type="email" name="email" placeholder="Email">
+          <input type="password" name="password" placeholder="Password">
+          <input type="submit">
+        </form>
 
-      
-
-      <h5>Login:</h5>
-      <form action="/user/login" method="post">
-        <input type="email" name="email" placeholder="email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit">
-      </form>
-        </div>
+        <h5>Login:</h5>
+        <form action="/user/login" method="post">
+          <input type="email" name="email" placeholder="email">
+          <input type="password" name="password" placeholder="Password">
+          <input type="submit">
+        </form>
+      </div>
 
 
-        </div>
-      <!-- <p style="color:red;">
+    </div>
+    <!-- <p style="color:red;">
       <%=error%>
     </p> -->
 
-
-
-
-  </body>
-</main>
+  </main>
 
   <footer class="page-footer blue darken-4">
     <div class="container">
@@ -89,4 +84,7 @@
       </div>
     </div>
   </footer>
+
+</body>
+
 </html>
