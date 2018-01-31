@@ -9,17 +9,17 @@ main {
   height: auto;
 }
 
-footer {
-  align-items: bottom;
-}
-
 img {
   width: 350px;
 }
 
-container-about {
-  height: 100%;
-  width: 75%;
-  height: 200px;
-  color: red;
+.about {
+  width: 100%;
+  height: 175px;
+}
+
+form {
+  background-color: #e3f2fd;
+  border-radius: 5px;
+  padding: 5px;
 }
