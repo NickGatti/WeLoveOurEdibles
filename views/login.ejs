@@ -4,22 +4,25 @@
 <head>
   <meta charset="utf-8">
   <title>Login and Registation</title>
+
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <nav>
-  <div class="nav-wrapper">
+  <div class="nav-wrapper blue darken-4">
     <a href="/" class="brand-logo">Logo</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="/about">About</a></li>
       <li><a href="/contact">Contact</a></li>
-      <li><a href="/login">Login/Registation</a></li>
+      <li><a href="/login">Login/Registration</a></li>
     </ul>
   </div>
 </nav>
@@ -28,36 +31,41 @@
 
   <body>
 
+    <div class="container">
 
-<div class="container">
-<h3>Login and Registation</h3>
-<h5>Register:</h5>
-    <form action="/user/register" method="post">
-      <input type="email" name="email" placeholder="Email">
-      <input type="password" name="password" placeholder="Password">
-      <input type="submit">
-    </form>
-    <hr>
-    <h5>Login:</h5>
-    <form action="/user/login" method="post">
-      <input type="email" name="email" placeholder="email">
-      <input type="password" name="password" placeholder="Password">
-      <input type="submit">
-    </form>
-    <p style="color:red;">
+      <div class="row">
+    <h3>Login and Registration</h3>
+
+      <h5>Register:</h5>
+      <form action="/user/register" method="post">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit">
+      </form>
+
+      
+
+      <h5>Login:</h5>
+      <form action="/user/login" method="post">
+        <input type="email" name="email" placeholder="email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit">
+      </form>
+        </div>
+
+
+        </div>
+      <!-- <p style="color:red;">
       <%=error%>
-    </p>
-</div>
-<div class="container-about">
-  spacer
-</div>
+    </p> -->
+
+
+
 
   </body>
-
 </main>
 
-<footer>
-  <footer class="page-footer">
+  <footer class="page-footer blue darken-4">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
@@ -69,7 +77,7 @@
             <li><a class="grey-text text-lighten-3" href="/">HOME</a></li>
             <li><a class="grey-text text-lighten-3" href="/about">ABOUT</a></li>
             <li><a class="grey-text text-lighten-3" href=/contact>CONTACT</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">ADMIN</a></li>
+            <li><a class="grey-text text-lighten-3" href="/login">ADMIN</a></li>
           </ul>
         </div>
       </div>
@@ -81,5 +89,4 @@
       </div>
     </div>
   </footer>
-
 </html>
