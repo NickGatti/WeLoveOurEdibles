@@ -17,17 +17,15 @@ module.exports = {
         res.render( "login", { error: req.session.error } );
     },
     register: function ( req, res ) {
-        knex( 'users' ).insert( {
-            name: req.body.name,
+        knex( 'user' ).insert( {
             email: req.body.email,
-            age: req.body.age,
             password: req.body.password
         } ).then( () => {
             res.redirect( '/home' );
         } )
     },
     login: function ( req, res ) {
-        knex( 'users' )
+        knex( 'user' )
             .where( 'email', req.body.email )
             .then( ( user ) => {
                 user = user[ 0 ];
@@ -41,10 +39,30 @@ module.exports = {
 
                 if ( user.password === req.body.password ) {
                     req.session.user = user;
-                    req.session.save( () => {
-                        // redirect somewhere
-                        res.redirect( '/home' );
-                    } )
+
+                    knex( 'admin' )
+                        .where( 'email', req.body.email )
+                        .then( ( adminData ) => {
+
+                            adminData = adminData[ 0 ]
+                            if ( adminData ) {
+                                if ( adminData.password === req.body.password ) {
+                                    req.session.admin = adminData;
+                                    req.session.save( () => {
+                                        // redirect somewhere
+                                        console.log( "We got the admin login" );
+                                        res.redirect( '/admin' );
+                                    } )
+                                    return
+                                }
+                            } else {
+                                req.session.save( () => {
+                                    // redirect somewhere
+                                    console.log( 'We got the user login' );
+                                    res.redirect( '/mmj' );
+                                } )
+                            }
+                        } )
                 } else {
                     req.session.error = "Invalid email/password"
                     req.session.save( () => {

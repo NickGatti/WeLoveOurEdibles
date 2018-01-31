@@ -40,7 +40,7 @@ function authMiddlewareUser( req, res, next ) {
 }
 
 function authMiddlewareAdmin( req, res, next ) {
-    if ( !req.session.user ) {
+    if ( !req.session.admin ) {
         res.redirect( '/home' )
     } else {
         next();
