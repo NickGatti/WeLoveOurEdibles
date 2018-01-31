@@ -1,0 +1,24 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  height: auto;
+}
+
+footer {
+  align-items: bottom;
+}
+
+img {
+  width: 350px;
+}
+
+container-about {
+  width: 75%;
+  height: 200px;
+  color: red;
+}
