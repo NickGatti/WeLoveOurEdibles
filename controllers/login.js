@@ -59,7 +59,7 @@ module.exports = {
                                 req.session.save( () => {
                                     // redirect somewhere
                                     console.log( 'We got the user login' );
-                                    res.redirect( '/mmj' );
+                                    res.redirect( '/reviews' );
                                 } )
                             }
                         } )
@@ -74,6 +74,6 @@ module.exports = {
     },
 
     protectedpage: function ( req, res ) {
-        res.render( 'mmj', { user: req.session.user } )
+        res.render( 'reviews', { user: req.session.user } )
     }
 }
