@@ -1,19 +1,20 @@
-const express = require( "express" );
-const path = require( "path" );
+const express = require("express");
+const path = require("path");
 const app = express();
-const bodyParser = require( 'body-parser' );
+const bodyParser = require('body-parser');
 const port = process.env.PORT || 8000;
+
 app.use( express.static( __dirname + '/public' ) )
 app.use( bodyParser.json( { extended: true } ) );
 app.use( bodyParser.urlencoded( { extended: true } ) );
 
-require( './config/sessions' )( app );
+require('./config/sessions')(app);
 
-app.set( 'view engine', 'ejs' );
+app.set('view engine', 'ejs');
 
-var routes_setter = require( './config/routes.js' );
-routes_setter( app );
+var routes_setter = require('./config/routes.js');
+routes_setter(app);
 
-app.listen( port, function () {
-    console.log( 'Listening on', port );
-} );
+app.listen(port, function() {
+  console.log('Listening on', port);
+});
