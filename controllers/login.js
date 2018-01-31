@@ -17,17 +17,15 @@ module.exports = {
         res.render( "login", { error: req.session.error } );
     },
     register: function ( req, res ) {
-        knex( 'users' ).insert( {
-            name: req.body.name,
+        knex( 'user' ).insert( {
             email: req.body.email,
-            age: req.body.age,
             password: req.body.password
         } ).then( () => {
             res.redirect( '/home' );
         } )
     },
     login: function ( req, res ) {
-        knex( 'users' )
+        knex( 'user' )
             .where( 'email', req.body.email )
             .then( ( user ) => {
                 user = user[ 0 ];
