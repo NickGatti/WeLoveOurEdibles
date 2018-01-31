@@ -4,10 +4,10 @@ const login = require( "../controllers/login.js" )
 const about = require( "../controllers/about.js" )
 const contact = require( "../controllers/contact.js" )
 const home = require( "../controllers/home.js" )
-const nonmmj = require( "../controllers/nonmmj.js" )
+const share = require( "../controllers/share.js" )
 const user = require( "../controllers/user.js" )
 const admin = require( "../controllers/admin.js" )
-const mmj = require( "../controllers/mmj.js" )
+const reviews = require( "../controllers/reviews.js" )
 const api = require( "../controllers/api.js" )
 
 module.exports = function ( app ) {
@@ -17,9 +17,8 @@ module.exports = function ( app ) {
     app.get( '/home', home.view )
     app.get( '/about', about.view )
     app.get( '/contact', contact.view )
-    app.get( '/non-mmj', nonmmj.view )
     app.get( '/login', login.index )
-    app.get( '/nonmmj', nonmmj.view )
+    app.get( '/share', share.view )
     app.post( '/user/register', login.register );
     app.post( '/user/login', login.login );
 
@@ -29,7 +28,7 @@ module.exports = function ( app ) {
     //MMJ-TRUE
     app.use( authMiddlewareUser );
     app.get( '/user', user.controlPanel );
-    app.get( '/mmj', mmj.view );
+    app.get( '/reviews', reviews.view );
 
     //ADMIN
     app.use( authMiddlewareAdmin );
