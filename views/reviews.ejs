@@ -7,9 +7,6 @@
 		<!--Import Google Icon Font-->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-		<!-- jQuery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 		<!-- Compiled and minified CSS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 		<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -17,9 +14,11 @@
 		<!-- Compiled and minified JavaScript -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
+
 	</head>
 
 	<body>
+
 		<nav>
 			<div class="nav-wrapper blue darken-4">
 				<a href="/home" class="brand-logo">
@@ -30,31 +29,49 @@
 					<li><a href="/contact">Contact</a></li>
 					<li><a href="/login">Login/Reg</a></li>
 					<!-- <li><a href="/reviews">Reviews</a></li> -->
-					<li><a href="/share">View Reviews</a></li>
+					<li><a href="/home">Home</a></li>
 				</ul>
 			</div>
 		</nav>
 
 		<main>
+			<div class="container">
+				<br>
+				<form class="searchForm" action="/share/search" method="post">
+					<input type="text" name="search" placeholder="Search">
+				</form>
+
+				<div class="searchResults">
+					<h5>Search Results</h5>
+					<!-- INSERT RESULTS HERE -->
+					<div class="row">
+						<% for (let i = 0; i < products.length; i++) { %>
 
 
 
+							<div class="col s6">
+								<div class="card">
+									<div class="card-image">
+										<img src="<%= products[i].img_url %>">
+										<span class="card-title"><%= products[i].name %></span>
+									</div>
+									<div class="card-content">
+										<p>
+											<%= products[i].description %>
+										</p>
+									</div>
+									<div class="card-action">
+										<a href="/products/<%= products[i].id %>">See the reviews</a>
+									</div>
+								</div>
+							</div>
 
-<div class="container">
-<br>
 
-<div class="about">
-	<form class="searchForm" method="post">
-		<input type="text" name="Search" placeholder="Search">
-	</form>
 
-	<div class="searchResults">
-	<h5>Reviews</h5>
-		<!-- INSERT RESULTS HERE -->
-	</div>
-</div>
-
-		</div>
+							<% } %>
+					</div>
+				</div>
+			</div>
 
 		</main>
 
@@ -75,10 +92,4 @@
 
 	</body>
 
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$(".button-collapse").sideNav();
-		});
-	</script>
-<script src="/js/slots.js"></script>
 </html>
