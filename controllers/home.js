@@ -8,6 +8,8 @@ module.exports = {
                 res.render( 'home', {
                     products: productData
                 } )
+            } ).catch( ( err ) => {
+                console.log( err );
             } )
     }
 

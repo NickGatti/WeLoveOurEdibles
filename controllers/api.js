@@ -6,6 +6,8 @@ module.exports = {
         knex( 'product' )
             .then( ( productData ) => {
                 res.json( { "products": productData } )
+            } ).catch( ( err ) => {
+                console.log( err );
             } )
     }
 
