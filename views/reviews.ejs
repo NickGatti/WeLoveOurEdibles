@@ -7,6 +7,9 @@
 		<!--Import Google Icon Font-->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 		<!-- Compiled and minified CSS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 		<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -21,14 +24,27 @@
 		<main>
 
 
-		<ul id="slide-out" class="side-nav fixed blue darken-4">
-				<a href="/home" class="brand-logo"><img src="/images/drinks1.jpg" alt="">
-				</a>
-			<li><a href="/about">About</a></li>
-			<li><a href="/contact">Contact</a></li>
-			<li><a href="/login">Login/Registration</a></li>
-    </ul>
-    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+			<ul id="slide-out" class="side-nav">
+				<li>
+					<div class="user-view">
+						<div class="background">
+							<img src="images/mmj.jpg">
+						</div>
+						<a href=""><img class="circle" src="images/baked1.jpg"></a>
+						<a href=""><span class="white-text name">About</span></a>
+						<a href=""><span class="white-text email">Contact</span></a>
+					</div>
+				</li>
+				<li><a href="#!"><i class="material-icons">cloud</i>Baked One</a></li>
+				<li><a href="#!">Baked Two</a></li>
+				<li>
+					<div class="divider"></div>
+				</li>
+				<li><a class="subheader">Candy</a></li>
+				<li><a class="waves-effect" href="#!">Candy 1</a></li>
+			</ul>
+			<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+
 
 
 		</main>
@@ -59,5 +75,11 @@
 		</footer>
 
 	</body>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".button-collapse").sideNav();
+		});
+	</script>
 
 </html>
