@@ -9,6 +9,7 @@ const user = require( "../controllers/user.js" )
 const admin = require( "../controllers/admin.js" )
 const reviews = require( "../controllers/reviews.js" )
 const api = require( "../controllers/api.js" )
+const products = require( "../controllers/products.js" )
 
 module.exports = function ( app ) {
 
@@ -19,6 +20,7 @@ module.exports = function ( app ) {
     app.get( '/contact', contact.view )
     app.get( '/login', login.index )
     app.get( '/share', share.view )
+    app.get( '/products/:id', products.viewProduct )
     app.post( '/share/search', share.search )
     app.post( '/user/register', login.register );
     app.post( '/user/login', login.login );
