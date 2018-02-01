@@ -10,7 +10,8 @@ main {
 }
 
 img {
-  width: 350px;
+  width: 345px;
+  border-radius: 5px;
 }
 
 .about {
