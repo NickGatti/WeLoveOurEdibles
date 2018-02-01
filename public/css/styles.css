@@ -10,16 +10,27 @@ main {
 }
 
 img {
-  width: 345px;
+  width: auto;
+  border-radius: 5px;
+}
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+.slot-img {
+  width: 400px;
   border-radius: 5px;
 }
 
 .about {
   width: 100%;
-  height: 175px;
+  min-height: 200px;
   border-radius: 5px;
   background-color: #e3f2fd;
-  padding: 5px;
+  padding: 10px;
 }
 
 form {
