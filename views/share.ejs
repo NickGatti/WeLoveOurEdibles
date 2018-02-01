@@ -42,6 +42,32 @@
 				<div class="searchResults">
 					<h5>Search Results</h5>
 					<!-- INSERT RESULTS HERE -->
+					<div class="row">
+						<% for (let i = 0; i < products.length; i++) { %>
+
+
+
+							<div class="col s6">
+								<div class="card">
+									<div class="card-image">
+										<img src="<%= products[i].img_url %>">
+										<span class="card-title"><%= products[i].name %></span>
+									</div>
+									<div class="card-content">
+										<p>
+											<%= products[i].description %>
+										</p>
+									</div>
+									<div class="card-action">
+										<a href="#">This is a link</a>
+									</div>
+								</div>
+							</div>
+
+
+
+							<% } %>
+					</div>
 				</div>
 			</div>
 
