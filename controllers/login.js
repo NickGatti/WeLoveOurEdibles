@@ -14,14 +14,16 @@ module.exports = {
         if ( !req.session.error ) {
             req.session.error = "";
         }
-        res.render( "login", { error: req.session.error } );
+        res.render( "login", { error: req.session.error } )
     },
     register: function ( req, res ) {
         knex( 'user' ).insert( {
             email: req.body.email,
             password: req.body.password
         } ).then( () => {
-            res.redirect( '/home' );
+            res.redirect( '/home' )
+        } ).catch( ( err ) => {
+            console.log( err );
         } )
     },
     login: function ( req, res ) {
@@ -32,7 +34,7 @@ module.exports = {
                 if ( !user ) {
                     req.session.error = "Invalid email/password"
                     req.session.save( () => {
-                        res.redirect( '/home' );
+                        res.redirect( '/home' )
                         return;
                     } )
                 }
@@ -51,7 +53,7 @@ module.exports = {
                                     req.session.save( () => {
                                         // redirect somewhere
                                         console.log( "We got the admin login" );
-                                        res.redirect( '/admin' );
+                                        res.redirect( '/admin' )
                                     } )
                                     return
                                 }
@@ -59,14 +61,16 @@ module.exports = {
                                 req.session.save( () => {
                                     // redirect somewhere
                                     console.log( 'We got the user login' );
-                                    res.redirect( '/reviews' );
+                                    res.redirect( '/reviews' )
                                 } )
                             }
+                        } ).catch( ( err ) => {
+                            console.log( err );
                         } )
                 } else {
                     req.session.error = "Invalid email/password"
                     req.session.save( () => {
-                        res.redirect( '/home' );
+                        res.redirect( '/home' )
                     } )
                 }
 

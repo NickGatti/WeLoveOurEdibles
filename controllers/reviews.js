@@ -3,7 +3,14 @@ const knex = require( "../db/knex.js" );
 module.exports = {
 
     view: function ( req, res, next ) {
-        res.render( 'reviews' )
-    }
+        knex( 'product' )
+            .then( ( productData ) => {
+                res.render( 'reviews', {
+                    products: productData
+                } )
+            } ).catch( ( err ) => {
+                console.log( err );
+            } )
+    },
 
 }
