@@ -23,6 +23,7 @@ module.exports = {
         } ).then( () => {
             res.redirect( '/home' )
         } ).catch( ( err ) => {
+            res.sendStatus( 500 )
             console.log( err );
         } )
     },
@@ -65,6 +66,7 @@ module.exports = {
                                 } )
                             }
                         } ).catch( ( err ) => {
+                            res.sendStatus( 500 )
                             console.log( err );
                         } )
                 } else {
