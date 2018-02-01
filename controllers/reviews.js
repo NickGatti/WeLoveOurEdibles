@@ -9,6 +9,7 @@ module.exports = {
                     products: productData
                 } )
             } ).catch( ( err ) => {
+                res.sendStatus( 500 )
                 console.log( err );
             } )
     },
