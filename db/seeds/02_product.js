@@ -4,11 +4,11 @@ exports.seed = function ( knex, Promise ) {
         .then( function () {
             // Inserts seed entries
             return knex( 'product' ).insert( [ {
-                    name: 'Baked 1',
-                    brand: 'Baked 1 Brand',
+                    name: 'Chocolate Fudge Brownie',
+                    brand: 'Super Haaaa',
                     MMJ: true,
                     category: 'Baked',
-                    description: 'Baked One',
+                    description: 'Super Haaa Super Baked Chocolate Fudge Brownie. Flaky and chewy come get super haaa with us!',
                     img_url: '/images/baked1.jpg',
                 }, {
                     name: 'Baked 2',
