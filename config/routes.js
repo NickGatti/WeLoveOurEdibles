@@ -22,6 +22,7 @@ module.exports = function ( app ) {
     app.get( '/share', share.view )
     app.get( '/products/:id', products.viewProduct )
     app.post( '/share/search', share.search )
+    app.post( '/reviews/search', reviews.search )
     app.post( '/user/register', login.register );
     app.post( '/user/login', login.login );
 
