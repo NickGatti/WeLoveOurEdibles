@@ -1,72 +1,63 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<title>Products</title>
-		<!--Import Google Icon Font-->
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<!-- Compiled and minified CSS -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-		<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-		<!-- Compiled and minified JavaScript -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/styles.css">
-	</head>
+<head>
+	<meta charset="utf-8">
+	<title>Product</title>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
 
-	<body>
+<body>
 
-		<nav>
-			<div class="nav-wrapper blue darken-4">
-				<a href="/home" class="brand-logo">
+	<nav>
+		<div class="nav-wrapper blue darken-4">
+			<a href="/home" class="brand-logo">
 						<img src="/images/WeLoveOurEdibles_logo.png">
 					</a>
-				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/login">Login/Reg</a></li>
-					<!-- <li><a href="/reviews">Reviews</a></li> -->
-					<li><a href="/share">View Reviews</a></li>
-				</ul>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="/about">About</a></li>
+				<li><a href="/contact">Contact</a></li>
+				<li><a href="/login">Login/Reg</a></li>
+				<!-- <li><a href="/reviews">Reviews</a></li> -->
+				<li><a href="/share">View Reviews</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<main>
+
+		<div class="container">
+			<div class="center">
+				<h4><%= product.name %></h4>
+				<img src="<%= product.img_url %>" class="center-align">
+				<p>Brand:
+					<%= product.brand %>
+				</p>
+				<p>Category:
+					<%= product.category %>
+				</p>
+				<p>
+					Description:
+					<%= product.description %>
+				</p>
+				<% if (product.MMJ) { %>
+					MMJ: Yes
+					<% } else { %>
+						MMJ: No
+						<% } %>
 			</div>
-		</nav>
 
-		<main>
-			<div class="container">
-				<br>
-
-				<div class="searchResults">
-					<h4><%= product.name %></h4>
-					<!-- INSERT RESULTS HERE -->
-					<div class="about">
-						<img src="<%= product.img_url %>" alt="">
-						<p>Brand:
-							<%= product.brand %>
-						</p>
-						<p>Category:
-							<%= product.category %>
-						</p>
-						<p>
-							Description:
-							<%= product.description %>
-						</p>
-						<% if (product.MMJ) { %>
-							MMJ: Yes
-							<% } else { %>
-								MMJ: No
-								<% } %>
-					</div>
-
-				</div>
-
-				<h4>Reviews</h4>
-
-
-
+			<div class="about">
+				<h5>Reviews</h5>
 				<%for (let i = 0; i < reviews.length; i++) { %>
-
 					<div class="row">
-
 						<div class="col s2">
 							Review #
 							<%= i + 1 %>
@@ -92,29 +83,29 @@
 							<%= reviews[i].recommend %>
 						</div>
 
-
-
 					</div>
 
+			</div>
 
-					<% } %>
 
+			<% } %>
 
-		</main>
-		<footer class="page-footer blue darken-4">
-			<div class="footer-copyright">
-				<div class="container">
-					<div class="row">
-						<div class="col s6">
-							© 2018 Copyright - WeLoveOurEdibles
-						</div>
-						<div class="col s6 right-align">
-							<span class="white-text">WeLoveOurEdibles</span>
-						</div>
+		</div>
+	</main>
+	<footer class="page-footer blue darken-4">
+		<div class="footer-copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col s6">
+						© 2018 Copyright - WeLoveOurEdibles
+					</div>
+					<div class="col s6 right-align">
+						<span class="white-text">WeLoveOurEdibles</span>
 					</div>
 				</div>
 			</div>
-		</footer>
-	</body>
+		</div>
+	</footer>
+</body>
 
 </html>

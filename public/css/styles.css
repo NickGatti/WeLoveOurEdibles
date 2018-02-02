@@ -38,3 +38,8 @@ form {
   border-radius: 5px;
   padding: 5px;
 }
+
+.searchResults {
+  background-color: #e3f2fd;
+  align-self: center;
+}
