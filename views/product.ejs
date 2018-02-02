@@ -38,29 +38,30 @@
 					<div class="card image">
 				<h4><%= product.name %></h4>
 					<img class="results-img" src="<%= product.img_url %>">
-					<div class="card content">
+					<div class="card content blue lighten-4">
 
 
-					<p>Brand:
+					<p class="flow-text">Brand:
 						<%= product.brand %>
 					</p>
-					<p>Category:
+					<p class="flow-text">Category:
 						<%= product.category %>
 					</p>
-					<p>
+					<p class="flow-text">
 						Description:
 						<%= product.description %>
 					</p>
+					<p class="flow-text">
 					<% if (product.MMJ) { %>
 						MMJ: Yes
 						<% } else { %>
 							MMJ: No
-							<% } %>
+							<% } %></p>
 								</div>
 		</div>
 </div>
 
-				<div class="about">
+				<div class="about blue lighten-5">
 					<h5>Reviews</h5>
 					<div class="row">
 						<div class="col s2">
