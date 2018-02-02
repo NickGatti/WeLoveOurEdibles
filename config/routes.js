@@ -21,6 +21,7 @@ module.exports = function ( app ) {
     app.get( '/login', login.index )
     app.get( '/share', share.view )
     app.get( '/products/:id', products.viewProduct )
+    app.get( '/logout', index.logout )
     app.post( '/share/search', share.search )
     app.post( '/reviews/search', reviews.search )
     app.post( '/user/register', login.register );
