@@ -28,7 +28,11 @@
 					<% } else { %>
 						<li><a href="/login">Login/Reg</a></li>
 						<% } %>
-							<li><a href="/share">View Reviews</a></li>
+							<% if(logout) { %>
+								<li><a href="/reviews">View Reviews</a></li>
+								<%} else { %>
+									<li><a href="/share">View Reviews</a></li>
+									<% } %>
 			</ul>
 		</div>
 	</nav>
