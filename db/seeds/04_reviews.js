@@ -33,7 +33,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 3
               }, {
                     appearance: 4,
                     taste: 5,
@@ -43,7 +43,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 4
               }, {
                     appearance: 8,
                     taste: 7,
@@ -53,7 +53,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 5
               }, {
                     appearance: 9,
                     taste: 8,
@@ -63,7 +63,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 6
               }, {
                     appearance: 7,
                     taste: 8,
@@ -73,7 +73,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 7
               }, {
                     appearance: 9,
                     taste: 9,
@@ -83,7 +83,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 8
               }, {
                     appearance: 7,
                     taste: 7,
@@ -93,7 +93,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 9
               }, {
                     appearance: 4,
                     taste: 4,
@@ -103,7 +103,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 10
               }, {
                     appearance: 1,
                     taste: 1,
@@ -113,7 +113,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 11
               }, {
                     appearance: 5,
                     taste: 5,
@@ -123,7 +123,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 12
               }, {
                     appearance: 8,
                     taste: 7,
@@ -133,7 +133,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 13
               }, {
                     appearance: 6,
                     taste: 6,
@@ -143,7 +143,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 14
               }, {
                     appearance: 9,
                     taste: 4,
@@ -153,7 +153,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 15
               }, {
                     appearance: 8,
                     taste: 8,
@@ -163,7 +163,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 16
               }, {
                     appearance: 6,
                     taste: 6,
@@ -173,7 +173,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 17
               }, {
                     appearance: 5,
                     taste: 5,
@@ -183,7 +183,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 18
               }, {
                     appearance: 1,
                     taste: 1,
@@ -193,7 +193,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 19
               }, {
                     appearance: 7,
                     taste: 6,
@@ -203,7 +203,7 @@ exports.seed = function ( knex, Promise ) {
                     from: '',
                     share: false,
                     product_id: 3,
-                    user_id: 2
+                    user_id: 20
               }
               ] );
         } );
