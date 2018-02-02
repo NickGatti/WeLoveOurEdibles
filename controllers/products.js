@@ -9,12 +9,27 @@ module.exports = {
                 knex( 'reviews' )
                     .where( 'product_id', req.params.id )
                     .then( ( reviewData ) => {
+                        let averages = avg( reviewData, [ 'appearance', 'taste', 'smell', 'effect', 'recommend' ] )
                         res.render( 'product', {
                             product: productData[ 0 ],
-                            reviews: reviewData
+                            reviews: reviewData,
+                            average: averages
                         } )
                     } )
             } )
     }
 
+}
+
+function avg( data, proto ) {
+    let res
+    let output = []
+    for ( let z = 0; z < proto.length; z++ ) {
+        res = 0
+        for ( let i = 0; i < data.length; i++ ) {
+            res += data[ i ][ proto[ z ] ]
+        }
+        output.push( res / data.length )
+    }
+    return output
 }
