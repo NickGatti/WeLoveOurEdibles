@@ -25,6 +25,11 @@ img {
   border-radius: 5px;
 }
 
+.results-img {
+  width: 100%;
+  border-radius: 5px;
+}
+
 .about {
   width: 100%;
   min-height: 200px;

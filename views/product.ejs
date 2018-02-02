@@ -32,11 +32,15 @@
 		</nav>
 
 		<main>
-
+<br>
 			<div class="container">
 				<div class="center">
-					<h4><%= product.name %></h4>
-					<img src="<%= product.img_url %>" class="center-align">
+					<div class="card image">
+				<h4><%= product.name %></h4>
+					<img class="results-img" src="<%= product.img_url %>">
+					<div class="card content">
+
+
 					<p>Brand:
 						<%= product.brand %>
 					</p>
@@ -52,7 +56,9 @@
 						<% } else { %>
 							MMJ: No
 							<% } %>
-				</div>
+								</div>
+		</div>
+</div>
 
 				<div class="about">
 					<h5>Reviews</h5>
@@ -81,6 +87,7 @@
 							<%= average[4] %>
 						</div>
 					</div>
+
 					<%for (let i = 0; i < reviews.length; i++) { %>
 						<div class="row">
 							<div class="col s2">
@@ -109,14 +116,12 @@
 							</div>
 
 						</div>
-
+		<% } %>
 				</div>
-
-
-				<% } %>
 
 			</div>
 		</main>
+
 		<footer class="page-footer blue darken-4">
 			<div class="footer-copyright">
 				<div class="container">
