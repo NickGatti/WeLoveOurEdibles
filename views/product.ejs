@@ -1,111 +1,136 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-	<meta charset="utf-8">
-	<title>Product</title>
-	<!--Import Google Icon Font-->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!-- Compiled and minified CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-	<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<!-- Compiled and minified JavaScript -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>Product</title>
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!-- Compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+		<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+	</head>
 
-<body>
+	<body>
 
-	<nav>
-		<div class="nav-wrapper blue darken-4">
-			<a href="/home" class="brand-logo">
+		<nav>
+			<div class="nav-wrapper blue darken-4">
+				<a href="/home" class="brand-logo">
 						<img src="/images/WeLoveOurEdibles_logo.png">
 					</a>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<li><a href="/about">About</a></li>
-				<li><a href="/contact">Contact</a></li>
-				<li><a href="/login">Login/Reg</a></li>
-				<!-- <li><a href="/reviews">Reviews</a></li> -->
-				<li><a href="/share">View Reviews</a></li>
-			</ul>
-		</div>
-	</nav>
-
-	<main>
-
-		<div class="container">
-			<div class="center">
-				<h4><%= product.name %></h4>
-				<img src="<%= product.img_url %>" class="center-align">
-				<p>Brand:
-					<%= product.brand %>
-				</p>
-				<p>Category:
-					<%= product.category %>
-				</p>
-				<p>
-					Description:
-					<%= product.description %>
-				</p>
-				<% if (product.MMJ) { %>
-					MMJ: Yes
-					<% } else { %>
-						MMJ: No
-						<% } %>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="/about">About</a></li>
+					<li><a href="/contact">Contact</a></li>
+					<li><a href="/login">Login/Reg</a></li>
+					<!-- <li><a href="/reviews">Reviews</a></li> -->
+					<li><a href="/share">View Reviews</a></li>
+				</ul>
 			</div>
+		</nav>
 
-			<div class="about">
-				<h5>Reviews</h5>
-				<%for (let i = 0; i < reviews.length; i++) { %>
+		<main>
+
+			<div class="container">
+				<div class="center">
+					<h4><%= product.name %></h4>
+					<img src="<%= product.img_url %>" class="center-align">
+					<p>Brand:
+						<%= product.brand %>
+					</p>
+					<p>Category:
+						<%= product.category %>
+					</p>
+					<p>
+						Description:
+						<%= product.description %>
+					</p>
+					<% if (product.MMJ) { %>
+						MMJ: Yes
+						<% } else { %>
+							MMJ: No
+							<% } %>
+				</div>
+
+				<div class="about">
+					<h5>Reviews</h5>
 					<div class="row">
 						<div class="col s2">
-							Review #
-							<%= i + 1 %>
+							Overall Score
 						</div>
 						<div class="col s2">
 							Appearance:
-							<%= reviews[i].appearance %>
+							<%= average[0] %>
 						</div>
 						<div class="col s2">
 							Taste:
-							<%= reviews[i].taste %>
+							<%= average[1] %>
 						</div>
 						<div class="col s2">
 							Smell:
-							<%= reviews[i].smell %>
+							<%= average[2] %>
 						</div>
 						<div class="col s2">
 							Effect:
-							<%= reviews[i].effect %>
+							<%= average[3] %>
 						</div>
 						<div class="col s2">
 							Recommend:
-							<%= reviews[i].recommend %>
+							<%= average[4] %>
+						</div>
+					</div>
+					<%for (let i = 0; i < reviews.length; i++) { %>
+						<div class="row">
+							<div class="col s2">
+								Review #
+								<%= i + 1 %>
+							</div>
+							<div class="col s2">
+								Appearance:
+								<%= reviews[i].appearance %>
+							</div>
+							<div class="col s2">
+								Taste:
+								<%= reviews[i].taste %>
+							</div>
+							<div class="col s2">
+								Smell:
+								<%= reviews[i].smell %>
+							</div>
+							<div class="col s2">
+								Effect:
+								<%= reviews[i].effect %>
+							</div>
+							<div class="col s2">
+								Recommend:
+								<%= reviews[i].recommend %>
+							</div>
+
 						</div>
 
-					</div>
+				</div>
+
+
+				<% } %>
 
 			</div>
-
-
-			<% } %>
-
-		</div>
-	</main>
-	<footer class="page-footer blue darken-4">
-		<div class="footer-copyright">
-			<div class="container">
-				<div class="row">
-					<div class="col s6">
-						© 2018 Copyright - WeLoveOurEdibles
-					</div>
-					<div class="col s6 right-align">
-						<span class="white-text">WeLoveOurEdibles</span>
+		</main>
+		<footer class="page-footer blue darken-4">
+			<div class="footer-copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col s6">
+							© 2018 Copyright - WeLoveOurEdibles
+						</div>
+						<div class="col s6 right-align">
+							<span class="white-text">WeLoveOurEdibles</span>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</footer>
-</body>
+		</footer>
+	</body>
 
 </html>
