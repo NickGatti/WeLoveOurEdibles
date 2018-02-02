@@ -62,9 +62,13 @@
 </div>
 
 				<div class="about blue lighten-5">
+
 					<h5>Reviews</h5>
+					<hr>
 					<div class="row">
+
 						<div class="col s2">
+
 							Overall Score
 						</div>
 						<div class="col s2">
@@ -87,10 +91,12 @@
 							Recommend:
 							<%= average[4] %>
 						</div>
+
 					</div>
 
 					<%for (let i = 0; i < reviews.length; i++) { %>
 						<div class="row">
+
 							<div class="col s2">
 								Review #
 								<%= i + 1 %>
@@ -116,7 +122,7 @@
 								<%= reviews[i].recommend %>
 							</div>
 
-						</div>
+						</div><hr>
 		<% } %>
 				</div>
 
