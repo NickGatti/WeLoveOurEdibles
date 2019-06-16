@@ -18,11 +18,11 @@ module.exports = {
 
     search: function ( req, res, next ) {
         knex( 'product' )
-            .where( { 'name': req.body.search } )
-            .orWhere( { 'brand': req.body.search } )
-            .orWhere( { 'category': req.body.search } )
-            .orWhere( { 'description': req.body.search } )
-            .then( ( productData ) => {
+            .whereRaw( 'LOWER(name) LIKE ?', '%'+req.body.search.toLowerCase()+'%' )
+            .orWhereRaw( 'LOWER(brand) LIKE ?', '%'+req.body.search.toLowerCase()+'%' )
+            .orWhereRaw( 'LOWER(category) LIKE ?', '%'+req.body.search.toLowerCase()+'%' )
+            .orWhereRaw( 'LOWER(description) LIKE ?', '%'+req.body.search.toLowerCase()+'%' )
+            .then( ( productData ) => { 
                 req.session.products = productData
                 req.session.save( () => {
                     res.redirect( '/share' )
