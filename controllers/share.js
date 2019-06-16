@@ -5,12 +5,14 @@ module.exports = {
     view: function ( req, res, next ) {
         if ( !req.session.products ) {
             res.render( 'share', {
-                products: false
+                products: false,
+                logout: req.session.user ? true : false
             } )
             return
         }
         res.render( 'share', {
-            products: req.session.products
+            products: req.session.products,
+            logout: req.session.user ? true : false
         } )
     },
 
