@@ -5,14 +5,15 @@
 		<meta charset="utf-8">
 		<title>Share</title>
 		<!--Import Google Icon Font-->
+		<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 		<!-- Compiled and minified CSS -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-		<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		
 		<!-- Compiled and minified JavaScript -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 
 		<style media="screen">
@@ -55,9 +56,18 @@
 			<div class="container">
 				<br>
 				<form class="searchForm" action="/share/search" method="post">
-					<input type="text" name="search" placeholder="Search">
+					<div class="row">
+						<div class="col s12">
+							<div class="row">
+								<div class="input-field col s12">
+									<i class="material-icons prefix">textsms</i>
+									<input type="text" id="searchBox" class="autocomplete" name="search" placeholder="Search">
+									<label for="autocomplete-input">Autocomplete</label>
+								</div>
+							</div>
+						</div>
+					</div>
 				</form>
-
 				<div class="searchResults">
 					<h5>Search Results</h5>
 					<!-- INSERT RESULTS HERE -->
@@ -104,5 +114,7 @@
 		</footer>
 
 	</body>
+
+<script src='/js/search.js'></script>
 
 </html>
