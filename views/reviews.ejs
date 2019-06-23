@@ -54,11 +54,19 @@
 	<main>
 		<div class="container">
 			<br>
-
-			<form class="searchForm" action="/reviews/search" method="post">
-				<input id='searchBox' type="text" name="search" placeholder="Search Products">
+			<form class="searchForm" action="/share/search" method="post">
+				<div class="row">
+					<div class="col s12">
+						<div class="row">
+							<div class="input-field col s12">
+								<i class="material-icons prefix">textsms</i>
+								<input type="text" id="searchBox" class="autocomplete" name="search" placeholder="Search">
+								<label for="autocomplete-input">Search</label>
+							</div>
+						</div>
+					</div>
+				</div>
 			</form>
-
 			<div class="searchResults">
 				<h5>Search Results</h5>
 				<!-- INSERT RESULTS HERE -->
@@ -106,6 +114,6 @@
 
 </body>
 
-<script src='/js/search.js'></script>
+<script src='/js/search-reviews.js'></script>
 
 </html>

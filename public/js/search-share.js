@@ -15,7 +15,7 @@ $(document).ready(function () {
         let output = {}
 
         for (let key in res) {
-            output[res[key].name] = res[key].img_url
+            if (res[key].MMJ === false) output[res[key].name] = res[key].img_url
          }
 
             $('input.autocomplete').autocomplete({

@@ -18,7 +18,6 @@ module.exports = {
 
     search: function ( req, res, next ) {
         knex( 'product' )
-
             .where('MMJ', false)
             .andWhere(function() {
                 this.whereRaw(`LOWER(name) LIKE ?`, `%${req.body.search.toLowerCase()}%`)
