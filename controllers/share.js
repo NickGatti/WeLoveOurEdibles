@@ -18,10 +18,14 @@ module.exports = {
 
     search: function ( req, res, next ) {
         knex( 'product' )
-            .whereRaw( 'LOWER(name) LIKE ?', '%'+req.body.search.toLowerCase()+'%' )
-            .orWhereRaw( 'LOWER(brand) LIKE ?', '%'+req.body.search.toLowerCase()+'%' )
-            .orWhereRaw( 'LOWER(category) LIKE ?', '%'+req.body.search.toLowerCase()+'%' )
-            .orWhereRaw( 'LOWER(description) LIKE ?', '%'+req.body.search.toLowerCase()+'%' )
+
+            .where('MMJ', false)
+            .andWhere(function() {
+                this.whereRaw(`LOWER(name) LIKE ?`, `%${req.body.search.toLowerCase()}%`)
+                this.orWhereRaw(`LOWER(brand) LIKE ?`, `%${req.body.search.toLowerCase()}%`)
+                this.orWhereRaw(`LOWER(category) LIKE ?`, `%${req.body.search.toLowerCase()}%`)
+                this.orWhereRaw(`LOWER(description) LIKE ?`, `%${req.body.search.toLowerCase()}%`)
+            })
             .then( ( productData ) => { 
                 req.session.products = productData
                 req.session.save( () => {
